@@ -22,7 +22,7 @@ if hist_button:  # al hacer clic en el botón
     fig_1 = px.bar(price_for_cylinders, x="cylinders", y="price")
 
 # mostrar un gráfico Plotly interactivo
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig_1, use_container_width=True)
 
 st.header("¿Afecta el tipo al precio del vehículo")
 hist_button = st.button('tipo vs precio')  # crear un botón
@@ -37,4 +37,4 @@ if hist_button:  # al hacer clic en el botón
 
 
 # mostrar un gráfico Plotly interactivo
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig_2, use_container_width=True)
