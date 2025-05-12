@@ -10,7 +10,7 @@ price_for_cylinders["price"] = price_for_cylinders["price"].round()
 price_for_type = car_data.pivot_table(index="type", values="price", aggfunc="mean").reset_index(
 ).sort_values(by="price", ascending=False)
 st.header("¿Qué relación tiene el número de cilindros con el precio del vehículo")
-hist_button = st.button('Construir grafico de tablas')  # crear un botón
+hist_button = st.button(' cilindros vs precio')  # crear un botón
 
 if hist_button:  # al hacer clic en el botón
     # escribir un mensaje
@@ -23,7 +23,8 @@ if hist_button:  # al hacer clic en el botón
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("¿Afecta el tipo al precio del vehículo")
-hist_button = st.button('Construir grafico de tablas')  # crear un botón
+hist_button = st.button('tipo vs precio')  # crear un botón
+
 
 if hist_button:  # al hacer clic en el botón
     # escribir un mensaje
