@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 
 
-car_data = pd.read_csv('vehicles_us.csv')  # leer los datos
+car_data = pd.read_csv(
+    'C:/Users/gabri/personal_works/vehicles/vehicles_us.csv')  # leer los datos
+
 price_for_cylinders = car_data.pivot_table(
     index="cylinders", values="price", aggfunc="mean").reset_index()
 price_for_cylinders["price"] = price_for_cylinders["price"].round()
@@ -17,7 +19,7 @@ if hist_button:  # al hacer clic en el botón
     st.write('generando...')
 
 # crear un histograma
-    fig = px.bar(price_for_cylinders, x="cylinders", y="price")
+    fig_1 = px.bar(price_for_cylinders, x="cylinders", y="price")
 
 # mostrar un gráfico Plotly interactivo
 st.plotly_chart(fig, use_container_width=True)
@@ -31,7 +33,7 @@ if hist_button:  # al hacer clic en el botón
     st.write('generando...')
 
 # crear un histograma
-    fig = px.bar(price_for_type, x="type", y="price")
+    fig_2 = px.bar(price_for_type, x="type", y="price")
 
 
 # mostrar un gráfico Plotly interactivo
